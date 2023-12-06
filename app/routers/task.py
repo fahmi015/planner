@@ -15,7 +15,7 @@ def index(db:SessionLocal=Depends(get_db)):
     return TaskRepository.index(db)
 
 
-@router.get("/{id}")
+@router.get("/show/{id}")
 def show(id:int,db:SessionLocal=Depends(get_db)):
     return TaskRepository.show(id,db)
 

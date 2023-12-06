@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+**/__pycache__/
 
 # Local development settings
 .env
@@ -14,8 +15,6 @@ __pycache__/
 # Dependency directories
 venv/
 env/
-dist/
-build/
 
 # Compiled Python files
 *.pyc
