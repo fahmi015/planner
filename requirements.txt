@@ -4,3 +4,4 @@ python-decouple
 uvicorn
 sqlalchemy
 mysqlclient
+passlib
