@@ -3,5 +3,4 @@ PyJWT
 python-decouple
 uvicorn
 sqlalchemy
-databases
 mysqlclient
