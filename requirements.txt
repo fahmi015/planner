@@ -1,0 +1,4 @@
+fastapi
+PyJWT
+python-decouple
+uvicorn
