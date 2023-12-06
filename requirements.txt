@@ -1,7 +1,7 @@
-fastapi
-PyJWT
-python-decouple
-uvicorn
-sqlalchemy
-mysqlclient
-passlib
+fastapi=0.101.1
+PyJWT=2.8.0
+python-decouple=3.8
+uvicorn=0.23.2
+sqlalchemy=2.0.23
+mysqlclient=2.2.0
+passlib=1.7.4
