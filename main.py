@@ -12,7 +12,9 @@ origins = [
     "http://localhost:5173",
     "http://localhost",
     "http://localhost:8080",
+    "http://localhost:2222",
     "http://app.superappcanari.com",
+    "https://app.superappcanari.com",
     "app.superappcanari.com"
 ]
 app = FastAPI()
