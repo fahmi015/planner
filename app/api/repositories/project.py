@@ -4,12 +4,18 @@ from ..schemas.project import ProjectOutSchema,ProjectSchema
 from ...models.user import User
 from typing import List
 from fastapi import HTTPException
+from ..services.auth.auth_handler import getUserId
+
+from fastapi import Depends
 
 class ProjectRepository(BaseRepository):
     
-    def index(db)->List[ProjectOutSchema]:
-        return db.query(Project).all()
-    
+    def index(db,token)->List[ProjectOutSchema]:
+        
+        user_id = getUserId(token)
+        return db.query(User).filter(User.id==user_id).first().projects
+        #return db.query(Project).all()
+     
     
     def show(id:int,db)->ProjectOutSchema:
         return db.query(Project).filter(Project.id==id).first()    

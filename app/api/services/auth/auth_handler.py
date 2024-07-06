@@ -42,3 +42,11 @@ def expirationDataJWT(token: str) -> dict:
         return expiretion_date
     except:
         return time.time()
+
+def getUserId(token: str) -> int:
+    try:
+        decoded_token = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
+        user_id=decoded_token["user_id"]
+        return user_id
+    except:
+        return 0

@@ -3,6 +3,7 @@ from ..api.repositories.project import ProjectRepository
 from ..dependcies import get_db
 from ..models.database import SessionLocal
 from ..api.schemas.project import ProjectSchema,ProjectOutSchema
+from ..api.services.auth.auth_bearer import JWTBearer
 from typing import List
 
 router = APIRouter(
@@ -11,8 +12,8 @@ router = APIRouter(
 )
 
 @router.get("/",response_model=List[ProjectOutSchema])
-def index(db:SessionLocal=Depends(get_db)):
-    return ProjectRepository.index(db)
+def index(db:SessionLocal=Depends(get_db),token: str=Depends(JWTBearer())):
+    return ProjectRepository.index(db,token)
 
 
 @router.get("/{id}")
