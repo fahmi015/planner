@@ -1,5 +1,7 @@
 from pydantic import BaseModel, Field
 from datetime import datetime
+from .invoice import InvoiceOutSchema
+from typing import List
 
 class UserSchema(BaseModel):
     first_name: str = Field(...)
@@ -25,3 +27,7 @@ class UserOutSchema(UserSchema):
     updated_at:datetime|None
     last_login:datetime|None
     
+    tasks: List[InvoiceOutSchema] = []
+     
+    class Config:
+        from_attributes = True

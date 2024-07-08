@@ -14,7 +14,7 @@ class Invoice(Base,Timestamp):
     user_id = Column(Integer, ForeignKey("users.id"))
     budget_id = Column(Integer, ForeignKey("budgets.id"))
 
-    user = relationship('User', back_populates='invoices')
+    #user = relationship('User', back_populates='invoices')
     budget = relationship('Budget', back_populates='invoices')
     
 

@@ -15,4 +15,4 @@ class User(Base,Timestamp):
     last_login =  Column(DateTime)
 
     projects = relationship("Project", secondary="project_users", back_populates='users')
-    invoices = relationship("Invoice", back_populates='users')
+    #invoices = relationship("Invoice", back_populates='users')
