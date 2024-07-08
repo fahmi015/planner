@@ -46,7 +46,6 @@ class ProjectRepository(BaseRepository):
         project.amount = schema.amount or project.amount
         project.title = schema.title or project.title
         project.description = schema.description or project.description
-        project.objectives = schema.objectives or project.objectives
         project.date_from = schema.date_from or project.date
         project.date_to = schema.date_to or project.date_to
         project.type = schema.type or project.type

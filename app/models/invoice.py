@@ -16,3 +16,7 @@ class Invoice(Base,Timestamp):
 
     user = relationship('User', back_populates='invoices')
     budget = relationship('Budget', back_populates='invoices')
+    project = relationship('Project', back_populates='tasks')
+
+
+

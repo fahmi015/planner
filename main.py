@@ -3,6 +3,7 @@ from app.routers.auth import router as auth
 from app.routers.api import router as api
 from app.models.database import Base,engine
 from app.models.user import User
+from app.models.invoice import Invoice 
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.services.auth.auth import hash_password
 from sqlalchemy import event
@@ -48,8 +49,10 @@ def initialize_table(target, connection, **kw):
 
 event.listen(User.__table__, 'after_create', initialize_table)
 
+
 @app.on_event("startup")
 def configure():
+    print("create tables")
     Base.metadata.create_all(bind=engine)
     
 app.include_router(auth)

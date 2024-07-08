@@ -13,4 +13,4 @@ class Budget(Base,Timestamp):
     date_from = Column(Date)
     date_to  = Column(Date)
     
-    invoices = relationship("Invoice", back_populates="budget")
+    invoices = relationship("Invoice",back_populates='budget',lazy='dynamic')
