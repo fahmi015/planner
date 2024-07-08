@@ -3,7 +3,6 @@ from datetime import datetime,date
 
 class BudgetSchema(BaseModel):
     amount: float = Field(...)
-    objectives: str | None
     name: str = Field(...)
     date_from: date = Field(...)
     date_to: date = Field(...)

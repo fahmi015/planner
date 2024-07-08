@@ -9,9 +9,8 @@ class Budget(Base,Timestamp):
 
     id = Column(Integer, primary_key=True)
     amount =  Column(Float)
-    #objectives = Column(String(500),nullable=True)
     name = Column(String(100))
     date_from = Column(Date)
     date_to  = Column(Date)
     
-    #projects = relationship("Project", back_populates="budget")
+    invoices = relationship("Invoice", back_populates="budget")

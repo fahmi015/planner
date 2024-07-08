@@ -30,7 +30,6 @@ class BudgetRepository(BaseRepository):
     def update(id:int,schema:BudgetSchema,db)->BudgetOutSchema:
         budget=db.query(Budget).filter(Budget.id==id).first()  
         budget.amount = schema.amount or budget.amount
-        budget.objectives = schema.objectives or budget.objectives
         budget.name = schema.name or budget.name
         budget.date_from = schema.date_from or budget.date_from
         budget.date_to = schema.date_to or budget.date_to
