@@ -8,16 +8,12 @@ from typing import List
 
 
 class ProjectSchema(BaseModel):
-    
     title: str = Field(...)
     date_from: date = Field(...)
     date_to: date = Field(...)
     type:str | None = Field(...)
     users_id:List[int] | None = Field(...)
-    
-    
 
-    
         
 class ProjectOutSchema(BaseModel):
     id:int

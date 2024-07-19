@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from datetime import datetime
 from .invoice import InvoiceOutSchema
+from .permission import PermissionOutSchema
 from typing import List
 
 class UserSchema(BaseModel):
@@ -8,6 +9,14 @@ class UserSchema(BaseModel):
     last_name: str = Field(...)
     username: str = Field(...)
     avatar: str|None = Field(...)
+   
+    
+    
+class PermissionSchema(BaseModel):
+    permissions_id:List[int] | None = Field(...)
+
+class UserUpdateSchema(UserSchema,PermissionSchema):
+    pass
     
     
 class PasswordSchema(BaseModel):
@@ -18,7 +27,7 @@ class UserLoginSchema(BaseModel):
     password: str = Field(default="password",min_length=3)
     
 
-class UserInSchema(UserSchema,PasswordSchema):
+class UserInSchema(UserSchema,PasswordSchema,PermissionSchema):
     pass  
         
 class UserOutSchema(UserSchema):
@@ -28,6 +37,7 @@ class UserOutSchema(UserSchema):
     last_login:datetime|None
     
     tasks: List[InvoiceOutSchema] = []
-     
+    permissions: List[PermissionOutSchema] = []
+    
     class Config:
         from_attributes = True

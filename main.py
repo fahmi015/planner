@@ -4,6 +4,7 @@ from app.routers.api import router as api
 from app.models.database import Base,engine
 from app.models.user import User
 from app.models.invoice import Invoice 
+from app.models.permission import Permission
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.services.auth.auth import hash_password
 from sqlalchemy import event
@@ -38,8 +39,24 @@ INITIAL_DATA = {
                   'last_name':'Fahmi',
                   'password': hash_password('password')
             },
-            
       ],
+      'permissions':[
+          {
+              'name':'users'
+          },
+          {
+              'name':'budgets'
+          },
+          {
+              'name':'tasks'
+          },
+          {
+              'name':'notes'
+          },
+          {
+              'name':'calendar'
+          },
+      ]
 }
 
 def initialize_table(target, connection, **kw):

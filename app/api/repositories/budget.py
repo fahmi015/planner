@@ -6,7 +6,9 @@ from typing import List
 class BudgetRepository(BaseRepository):
     
     def index(db)->List[BudgetOutSchema]:
-        return db.query(Budget).all()
+        budgets = db.query(Budget).all()
+        return [BudgetOutSchema.from_orm(budget) for budget in budgets]
+        
     
     
     def show(id:int,db)->BudgetOutSchema:
