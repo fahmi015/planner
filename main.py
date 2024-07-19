@@ -56,6 +56,24 @@ INITIAL_DATA = {
           {
               'name':'calendar'
           },
+      ],
+      'permission_users':[
+          {
+              'user_id':1,
+              'permission_id':1
+          },
+          {
+              'user_id':1,
+              'permission_id':2
+          },
+          {
+              'user_id':1,
+              'permission_id':3
+          },
+          {
+              'user_id':1,
+              'permission_id':4
+          },
       ]
 }
 
